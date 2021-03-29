@@ -6,7 +6,15 @@ const INIT_STATE = {
     error: { message: '' } || null,
     data: null,
 }
-    
+
+/**
+ * @method onSubmit: fetch and check the existance of the city, once validate we use @method updateList to send that information to the parent Component AddCity
+ * @method onChange: update the value for the form and the state
+ * @method capiTalize: the majority of the city names are Capitalize, this method make sure that our string is.
+ * @method urlFormat: convert space to %20 and capitilaze city name
+ * 
+ */
+
 class AddFormBase extends Component<any,any> {
     
     constructor(props: any) {
@@ -35,16 +43,16 @@ class AddFormBase extends Component<any,any> {
             });
         event.preventDefault();
     }
-    capitalize = (str:string) => {
+    capiTalize = (str:string) => {
         return str[0].toUpperCase() + str.slice(1).toLowerCase();
     }
     urlFormat(str:string){
         let arr = str.split(" ");
-        let temp = arr.map(elem => this.capitalize(elem));
+        let temp = arr.map(elem => this.capiTalize(elem));
         return temp.join("%20");
     }
     onChange = (event:any) => {
-        /** TODO:: Create autocomplete function:
+        /** TODO:: Create autocomplete methode:
          * Compare city with remote fetched cities
          */
         this.setState({ [event.target.name]: event.target.value});
@@ -72,4 +80,5 @@ class AddFormBase extends Component<any,any> {
     }
 }
 
-export default withOpenaq(AddFormBase);;
+// Composing this Component with Openaq Consumer Context, so all the methode of Openaq fetch Api are available. 
+export default withOpenaq(AddFormBase);

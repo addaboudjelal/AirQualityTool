@@ -7,6 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import Openaq, { OpenaqContext } from './components/Openaq';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/**
+ * With Openaq, OpenaqContext Component we provide methodes to fetch data from OpenAQ API
+ */
+
 ReactDOM.render(
   <React.StrictMode>
     <OpenaqContext.Provider value={new Openaq()}>

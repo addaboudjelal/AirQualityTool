@@ -7,6 +7,10 @@ const INIT_STATE = {
     data: null,
 }
 
+/**
+ * Simple example of a Component that would be able to check the status of the API (TODO: update this status every 1s)
+ */
+
 class ApiStatus extends Component<any,any>{
 
     constructor(props:any){

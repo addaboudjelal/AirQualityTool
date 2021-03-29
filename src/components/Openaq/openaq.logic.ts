@@ -5,14 +5,18 @@ const config = {
     CITIES: 'cities',
     CITY: 'city=',
     MAX: 'limit=',
-    PING: 'ping',
 }
+/**
+ * Class component in charge of fetching data from API
+ */
 
 class Openaq {
-    // methodes to fetch data with 
+    // methodes to fetch data 
     
-    doHealth = () => fetch(config.URL+config.CITIES);
     doCity = (city:string) => fetch( `${config.URL+config.LATEST}?${config.CITY}${city}&${config.MAX}1`);
+    // TODO: create a methode to fetch mesurements data and linked it with D3.js Comp to render results
+    // create a methode to fetch all cities and build autocomplete component for when entrering city names
+    doHealth = () => fetch(config.URL+config.CITIES);
                         
 }
 

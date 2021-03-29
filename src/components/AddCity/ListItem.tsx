@@ -1,6 +1,12 @@
 import React from 'react';
 import { Row, Col, Card, ListGroup, ListGroupItem} from "react-bootstrap";
 
+/**
+ * Simple Component that loop and rendrer all the elements in the list/array we receive from parent Component (AddCity)
+ * @param dataList: list of the cities
+ * @param removeItem: enable us to remove selected city from the list 
+ */
+
 const ListItem = ({ dataList, removeItem }: any) => (
     <Row className="justify-content-start">
     { dataList && dataList.map((data: any, index: number) => (
