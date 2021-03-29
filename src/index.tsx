@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+
+import Openaq, { OpenaqContext } from './components/Openaq';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <OpenaqContext.Provider value={new Openaq()}>
+      <App />
+    </OpenaqContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
